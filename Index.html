@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roamly | Your Vacation Scrapbook</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <header class="hero">
+        <nav class="navbar">
+            <a href="#" class="logo">✈ Roamly<span>.</span></a>
+            <div class="nav-links">
+                <a href="#trip">Trip Planner</a>
+                <a href="#days">Travel Days</a>
+                <a href="#journal">Travel Journal</a>
+                <a href="#saved">Memories</a>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <p class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</p>
+            <h1>Collect moments.<br><span>Not things.</span></h1>
+            <p class="hero-text">Every journey has a story. Make yours unforgettable.</p>
+            <a href="#trip" class="hero-button">Create Your Album ↗</a>
+        </div>
+        <div class="hero-note">Wander often<br>Wonder always ✦</div>
+    </header>
+
+    <main class="container">
+        <section id="trip" class="trip-section">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LET'S GET AWAY</p>
+                    <h2>Create Your Vacation Album</h2>
+                    <p class="muted">First, tell us a little about your trip.</p>
+                </div>
+                <span class="heading-icon">🌍</span>
+            </div>
+
+            <form id="tripForm">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="tripTitle">Trip Title</label>
+                        <input id="tripTitle" type="text"
+                            placeholder="e.g. Goa Beach Holiday" required>
+                    </div>
+                    <div class="field">
+                        <label for="destination">Destination</label>
+                        <input id="destination" type="text"
+                            placeholder="Where are you going?" required>
+                    </div>
+                    <div class="field">
+                        <label for="startDate">Start Date</label>
+                        <input id="startDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="endDate">End Date</label>
+                        <input id="endDate" type="date" required>
+                    </div>
+                    <div class="field">
+                        <label for="mood">Trip Mood</label>
+                        <select id="mood">
+                            <option>Sunny</option>
+                            <option>Adventure</option>
+                            <option>Cozy</option>
+                            <option>Thrilling</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="weather">Weather</label>
+                        <select id="weather">
+                            <option>Sunny</option>
+                            <option>Rainy</option>
+                            <option>Cloudy</option>
+                            <option>Windy</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="primary-button" type="submit">✈ Create My Album</button>
+                <p id="tripMessage" class="message" aria-live="polite"></p>
+            </form>
+        </section>
+
+        <div class="content-layout">
+            <div class="main-column">
+                <section id="days" class="panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">LITTLE ADVENTURES, BIG MEMORIES</p>
+                            <h2>Day-by-Day Travel Entries</h2>
+                        </div>
+                        <button type="button" id="addDay" class="secondary-button">
+                            + Add Another Day
+                        </button>
+                    </div>
+
+                    <div id="dayEntries" class="day-grid">
+                        <article class="day-card">
+                            <h3>☀️ Day 1 — Arrival & Sunset</h3>
+                            <label class="upload-box">
+                                <span>📷 Choose Travel Photos</span>
+                                <small>You can select multiple photos</small>
+                                <input class="day-photos" type="file"
+                                    accept="image/*" multiple>
+                            </label>
+                            <div class="photo-preview"></div>
+                            <label class="field">
+                                <span>Today's Story</span>
+                                <textarea class="day-note" maxlength="500"
+                                    placeholder="What did you explore today?"></textarea>
+                            </label>
+                            <p class="counter">0/500</p>
+                        </article>
+
+                        <article class="day-card">
+                            <h3>📍 Day 2 — Explore & Discover</h3>
+                            <label class="upload-box">
+                                <span>📷 Choose Travel Photos</span>
+                                <small>You can select multiple photos</small>
+                                <input class="day-photos" type="file"
+                                    accept="image/*" multiple>
+                            </label>
+                            <div class="photo-preview"></div>
+                            <label class="field">
+                                <span>Today's Story</span>
+                                <textarea class="day-note" maxlength="500"
+                                    placeholder="Write about today's adventure..."></textarea>
+                            </label>
+                            <p class="counter">0/500</p>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="journal" class="panel journal-panel">
+                    <div class="section-heading">
+                        <div>
+                            <p class="eyebrow">WORDS TO REMEMBER</p>
+                            <h2>Your Travel Journal</h2>
+                            <p class="muted">The little things become the best stories.</p>
+                        </div>
+                        <span class="heading-icon">📔</span>
+                    </div>
+
+                    <div class="journal-grid">
+                        <div class="field">
+                            <label for="memories">💖 Favourite Memories</label>
+                            <textarea id="memories" maxlength="500"
+                                placeholder="A moment you never want to forget..."></textarea>
+                            <p class="counter">0/500</p>
+                        </div>
+                        <div class="field">
+                            <label for="stories">😂 Funny Travel Stories</label>
+                            <textarea id="stories" maxlength="500"
+                                placeholder="The funniest thing that happened..."></textarea>
+                            <p class="counter">0/500</p>
+                        </div>
+                        <div class="field">
+                            <label for="meals">🍜 Favourite Meal</label>
+                            <textarea id="meals" maxlength="500"
+                                placeholder="What delicious food did you try?"></textarea>
+                            <p class="counter">0/500</p>
+                        </div>
+                    </div>
+                    <button type="button" id="saveJournal" class="primary-button">
+                        ♡ Save My Memories
+                    </button>
+                    <p id="journalMessage" class="message" aria-live="polite"></p>
+                </section>
+
+                <section id="saved" class="panel">
+                    <p class="eyebrow">YOUR STORY, KEPT CLOSE</p>
+                    <h2>Saved Memories ✨</h2>
+                    <div id="savedMemories" class="saved-grid">
+                        <p class="empty-state">Your saved vacation memories will appear here.</p>
+                    </div>
+                </section>
+            </div>
+
+            <aside class="sidebar">
+                <article class="tip-card">
+                    <span class="tip-icon">💡</span>
+                    <h3>A Little Travel Tip</h3>
+                    <p>Take photos, explore new places, and write down the little moments that make your trip special.</p>
+                    <p class="handwritten">Life is better when you travel ✦</p>
+                </article>
+
+                <article class="summary-card">
+                    <h3>🧭 Trip Summary</h3>
+                    <p><strong>Trip:</strong> <span id="summaryTitle">Not created yet</span></p>
+                    <p><strong>Destination:</strong> <span id="summaryDestination">—</span></p>
+                    <p><strong>Dates:</strong> <span id="summaryDates">—</span></p>
+                    <p><strong>Mood:</strong> <span id="summaryMood">Sunny</span></p>
+                    <p><strong>Weather:</strong> <span id="summaryWeather">Sunny</span></p>
+                </article>
+
+                <article class="mood-card">
+                    <h3>✦ Your Travel Vibe</h3>
+                    <div class="mood-tags">
+                        <span>☀️ Sunny</span>
+                        <span>🌧 Rainy</span>
+                        <span>🏡 Cozy</span>
+                        <span>⛰ Thrilling</span>
+                    </div>
+                    <p class="muted">Choose a mood and weather in your trip planner.</p>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <p class="logo">✈ Roamly<span>.</span></p>
+        <p>Made for the places you go and the moments you keep.</p>
+        <p class="footer-small">Dream • Explore • Remember</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
